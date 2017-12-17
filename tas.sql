@@ -94,6 +94,21 @@ create table notice(
     foreign key (course_id, semester, time, place) references course(id, semester, time, place)
 );
 
+CREATE TABLE homework(
+    id INT AUTO_INCREMENT PRIMARY KEY ,
+    title VARCHAR(50) NOT NULL ,
+    content VARCHAR(500) ,
+    create_date DATE ,
+    ddl_date DATE ,
+    score INT ,
+    attachment VARCHAR(10) ,
+    course_id varchar(10),
+    semester varchar(15),
+    time varchar(15),
+    place varchar(20),
+    foreign key (course_id, semester, time, place) references course(id, semester, time, place)
+);
+
 insert into student values("3150102100", "123456", "黄雨生", "计算机科学与技术学院", "", "", "", "", "软件工程", "3", "1501", "");
 insert into student values("3150101100", "123456", "吴道义", "计算机科学与技术学院", "", "", "", "", "软件工程", "3", "1503", "");
 insert into student values("3150102210", "123456", "林世鹏", "计算机科学与技术学院", "", "", "", "", "软件工程", "3", "1502", "");
