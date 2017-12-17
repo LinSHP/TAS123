@@ -64,7 +64,11 @@ public class HomeworkDAO {
                         homework.setAttachments(rs.getString("attachment"));
                     }
                 });
-        return homework;
+        if (homework.getId() > 0) {
+            return homework;
+        } else {
+            return null;
+        }
     }
 
     public ArrayList<Homework> getHomeworkList(final CourseKey courseKey) {
